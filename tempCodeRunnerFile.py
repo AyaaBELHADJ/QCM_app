@@ -1,4 +1,4 @@
-from user_managment import UserManager
+from user_management import UserManager
 
 # Initialize UserManager
 manager = UserManager()
