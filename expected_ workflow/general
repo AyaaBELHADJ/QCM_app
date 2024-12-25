@@ -1,0 +1,90 @@
+QCM_Application/
+│
+├── data/
+│   ├── users.json         # Stockage des utilisateurs et de leurs scores
+│   ├── questions.json     # Stockage des questions et réponses
+│
+├── src/
+│   ├── main.py            # Point d'entrée principal de l'application
+│   ├── user_management.py # Gestion des utilisateurs
+│   ├── question_manager.py# Gestion des questions et réponses
+│   ├── feedback.py        # Génération des feedbacks et calcul du score
+│   ├── timer.py           # Implémentation du chronomètre (optionnel)
+│   ├── export.py          # Exportation des résultats en fichier texte/CSV
+│
+├── tests/
+│   ├── test_users.py      # Tests unitaires pour la gestion des utilisateurs
+│   ├── test_questions.py  # Tests unitaires pour la gestion des questions
+│   ├── test_timer.py      # Tests unitaires pour le chronomètre (optionnel)
+
+
+
+
+
+
+Week 1: Core Features
+1. User Management
+Assigned to: Member 1
+Tasks:
+
+Create the UserManager class in user_management.py.
+Implement the following methods:
+get_or_create_user(username)
+display_history(user)
+save_result(user, score)
+Test the user management system by simulating users with a JSON file.
+2. Question Management
+Assigned to: Member 2
+Tasks:
+
+Create the QuestionManager class in question_manager.py.
+Implement the following methods:
+load_questions(category=None)
+choose_category()
+check_answer(question, answer)
+Prepare a sample questions.json file with 10–15 questions across categories (Python, Networks, Algorithms).
+3. Feedback and Score
+Assigned to: Member 3
+Tasks:
+
+Create the Feedback class in feedback.py.
+Implement the following method:
+provide_feedback(is_correct, question) to display:
+Correct/Incorrect feedback.
+The correct answer if the user is wrong.
+Test the feedback system with sample questions.
+4. Integration and CLI Interface
+Assigned to: Team Leader (Aya)
+Tasks:
+
+Integrate the UserManager, QuestionManager, and Feedback modules into main.py.
+Create a basic CLI menu with the following options:
+Start a QCM.
+View user history.
+Exit.
+Ensure the app can run end-to-end for a basic QCM session.
+Week 2: Optional Features and Improvements
+1. Timer (Optional Feature)
+Assigned to: Member 4
+Tasks:
+
+Create the Timer class in timer.py.
+Implement the following methods:
+enabled()
+start()
+stop()
+Integrate the timer into the QCM flow in main.py.
+2. Export Results
+Assigned to: Member 1
+Tasks:
+
+Create the Export class in export.py.
+Implement the following methods:
+to_csv(user) to export user results to a CSV file.
+Optionally, add to_text(user) for exporting to a text file.
+3. Beautify the Console
+Assigned to: Member 2
+Tasks:
+
+Use colorama to add colors to make the console output visually appealing.
+Ensure different parts of the CLI (e.g., title, questions, feedback) use distinct colors.
