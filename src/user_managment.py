@@ -4,9 +4,13 @@ from datetime import datetime
 
 
 class UserManager:
-    def __init__(self, data_file="users.json"):
-        self.data_file = data_file
+    def __init__(self, data_file=None):
+        # Determine the absolute path to the users.json file
+        if data_file is None:
+            data_file = os.path.join(os.path.dirname(__file__), "../data/users.json")
+        self.data_file = os.path.abspath(data_file)
         self.users = self._load_users()
+
 
     def _load_users(self):
         """

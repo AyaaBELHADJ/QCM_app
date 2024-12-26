@@ -1,9 +1,20 @@
+import os
+import sys
+
+# Add the src directory to the Python path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../src')))
+
+# Import the UserManager
 from user_managment import UserManager
+
+
 
 # Initialize UserManager
 manager = UserManager()
 
 # Step 1: Get or create a user
+
+print("Welcome to the Quadquarks MCQ!  ")
 username = input("Enter your username: ")
 user = manager.get_or_create_user(username)
 
