@@ -1,0 +1,39 @@
+{
+    "questions": [
+      {
+        "question": "Combien vaut l'expression logique not(1 or 0) and (1 or 0) ?",
+        "options": ["0", "1"],
+        "answer": "0"
+      },
+      {
+        "question": "Combien vaut la variable i à la fin de ce programme ?\ni=16\nwhile i>=3:\n    print(i)\n    i=i-1",
+        "options": ["16", "8", "12", "2"],
+        "answer": "2"
+      },
+      {
+        "question": "Si a=9, b=1 et c=20 alors la condition logique not(c<a) and b>=a est :",
+        "options": ["vraie", "fausse"],
+        "answer": "fausse"
+      },
+      {
+        "question": "Combien vaut la variable booléenne b à la fin de ce programme ?\ne1={7}\ne2={8, 7}\nb=e1<e2",
+        "options": ["True", "False"],
+        "answer": "True"
+      },
+      {
+        "question": "Combien vaut la liste b à la fin de ce programme ?\na=['R', 'O']\nb=[]\nfor c in a:\n    b.append(chr(ord(c)+1))",
+        "options": ["['s', 'f']", "['h', 'k']", "['r', 'o']", "['R', 'm']", "['S', 'P']"],
+        "answer": "['S', 'P']"
+      },
+      {
+        "question": "Combien vaudra la variable b à la fin de ce programme ?\na=2\nb=6\nc=7\nd=2\nfor i in [8, 44, 47, 16, 40, 52, 21, 79]:\n    a=b\n    b=c\n    c=d\n    d=i",
+        "options": ["6", "79", "52", "7"],
+        "answer": "52"
+      },
+      {
+        "question": "Combien vaut la variable c à la fin de ce programme ?\na=tuple([51, 17, 53, 85, 25, 26])\nb=tuple([96, 19, 73, 42])\nc=a==b",
+        "options": ["False", "True"],
+        "answer": "False"
+      }
+    ]
+  }
