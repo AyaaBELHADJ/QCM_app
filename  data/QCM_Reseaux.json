@@ -1,75 +1,162 @@
 {
-    "questions": [
-      {
-        "question": "La forme complète de OSI est _____ _______ ______",
-        "options": [
+  "questions": [
+    {
+      "category": {"fr": "Réseaux", "eng": "Networks"},
+      "question": {
+        "fr": "La forme complète de OSI est _____ _______ ______",
+        "eng": "The full form of OSI is _____ _______ ______"
+      },
+      "options": {
+        "fr": [
           "Operating System interface",
           "Optical System interconnection",
           "Operating System Internet",
           "Open system interconnection"
         ],
-        "answer": "Open system interconnection"
+        "eng": [
+          "Operating System interface",
+          "Optical System interconnection",
+          "Operating System Internet",
+          "Open system interconnection"
+        ]
       },
-      {
-        "question": "Identifiez la forme complète de HTTP ?",
-        "options": [
+      "answer": {"fr": "Open system interconnection", "eng": "Open system interconnection"}
+    },
+    {
+      "category": {"fr": "Réseaux", "eng": "Networks"},
+      "question": {
+        "fr": "Identifiez la forme complète de HTTP ?",
+        "eng": "Identify the full form of HTTP?"
+      },
+      "options": {
+        "fr": [
           "HyperText Transfer Protocol",
           "HyperText Transfer Package",
           "Hyper Transfer Text Package",
           "Hyper Transfer Text Pool"
         ],
-        "answer": "HyperText Transfer Protocol"
+        "eng": [
+          "HyperText Transfer Protocol",
+          "HyperText Transfer Package",
+          "Hyper Transfer Text Package",
+          "Hyper Transfer Text Pool"
+        ]
       },
-      {
-        "question": "Identifiez le protocole principalement utilisé pour charger des pages web?",
-        "options": ["DNS", "HTML", "HTTP", "FTP"],
-        "answer": "HTTP"
+      "answer": {"fr": "HyperText Transfer Protocol", "eng": "HyperText Transfer Protocol"}
+    },
+    {
+      "category": {"fr": "Réseaux", "eng": "Networks"},
+      "question": {
+        "fr": "Identifiez le protocole principalement utilisé pour charger des pages web?",
+        "eng": "Identify the protocol mainly used to load web pages?"
       },
-      {
-        "question": "Que signifie PoP ?",
-        "options": [
+      "options": {
+        "fr": ["DNS", "HTML", "HTTP", "FTP"],
+        "eng": ["DNS", "HTML", "HTTP", "FTP"]
+      },
+      "answer": {"fr": "HTTP", "eng": "HTTP"}
+    },
+    {
+      "category": {"fr": "Réseaux", "eng": "Networks"},
+      "question": {
+        "fr": "Que signifie PoP ?",
+        "eng": "What does PoP mean?"
+      },
+      "options": {
+        "fr": [
           "Post Office Protocol",
           "Pre Office Protocol",
           "Protocol of Post",
           "Protocol Office Post"
         ],
-        "answer": "Post Office Protocol"
+        "eng": [
+          "Post Office Protocol",
+          "Pre Office Protocol",
+          "Protocol of Post",
+          "Protocol Office Post"
+        ]
       },
-      {
-        "question": "Quel est le numéro de port du PoP ?",
-        "options": ["25", "110", "43", "80"],
-        "answer": "110"
+      "answer": {"fr": "Post Office Protocol", "eng": "Post Office Protocol"}
+    },
+    {
+      "category": {"fr": "Réseaux", "eng": "Networks"},
+      "question": {
+        "fr": "Quel est le numéro de port du PoP ?",
+        "eng": "What is the port number of PoP?"
       },
-      {
-        "question": "Identifiez la couche qui fournit des services à l’utilisateur.",
-        "options": [
+      "options": {
+        "fr": ["25", "110", "43", "80"],
+        "eng": ["25", "110", "43", "80"]
+      },
+      "answer": {"fr": "110", "eng": "110"}
+    },
+    {
+      "category": {"fr": "Réseaux", "eng": "Networks"},
+      "question": {
+        "fr": "Identifiez la couche qui fournit des services à l’utilisateur.",
+        "eng": "Identify the layer that provides services to the user."
+      },
+      "options": {
+        "fr": [
           "Couche session",
           "Couche physique",
           "Couche application",
           "Couche présentation"
         ],
-        "answer": "Couche application"
+        "eng": [
+          "Session layer",
+          "Physical layer",
+          "Application layer",
+          "Presentation layer"
+        ]
       },
-      {
-        "question": "Que définit un ensemble de règles ?",
-        "options": ["System", "Opération", "Routeur", "Protocole"],
-        "answer": "Protocole"
+      "answer": {"fr": "Couche application", "eng": "Application layer"}
+    },
+    {
+      "category": {"fr": "Réseaux", "eng": "Networks"},
+      "question": {
+        "fr": "Que définit un ensemble de règles ?",
+        "eng": "What defines a set of rules?"
       },
-      {
-        "question": "Identifiez parmi les éléments suivants celui qui est principalement utilisé pour héberger un site web",
-        "options": [
+      "options": {
+        "fr": ["System", "Opération", "Routeur", "Protocole"],
+        "eng": ["System", "Operation", "Router", "Protocol"]
+      },
+      "answer": {"fr": "Protocole", "eng": "Protocol"}
+    },
+    {
+      "category": {"fr": "Réseaux", "eng": "Networks"},
+      "question": {
+        "fr": "Identifiez parmi les éléments suivants celui qui est principalement utilisé pour héberger un site web",
+        "eng": "Identify the element among the following that is mainly used to host a website."
+      },
+      "options": {
+        "fr": [
           "Serveur Mail",
           "Serveur Base de donnée",
           "Serveur Web",
           "Serveurs DNS"
         ],
-        "answer": "Serveur Web"
+        "eng": [
+          "Mail Server",
+          "Database Server",
+          "Web Server",
+          "DNS Servers"
+        ]
       },
-      {
-        "question": "Déterminer le nombre total de versions du protocole IP.",
-        "options": ["1", "2", "3", "4"],
-        "answer": "2"
-      }
-    ]
-  }
-  
+      "answer": {"fr": "Serveur Web", "eng": "Web Server"}
+    },
+    {
+      "category": {"fr": "Réseaux", "eng": "Networks"},
+      "question": {
+        "fr": "Déterminer le nombre total de versions du protocole IP.",
+        "eng": "Determine the total number of versions of the IP protocol."
+      },
+      "options": {
+        "fr": ["1", "2", "3", "4"],
+        "eng": ["1", "2", "3", "4"]
+      },
+      "answer": {"fr": "2", "eng": "2"}
+    }
+  ]
+}

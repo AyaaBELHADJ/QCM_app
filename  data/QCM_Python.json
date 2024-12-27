@@ -1,39 +1,70 @@
 {
-    "questions": [
-      {
-        "question": "Combien vaut l'expression logique not(1 or 0) and (1 or 0) ?",
-        "options": ["0", "1"],
-        "answer": "0"
+  "questions": [
+    {
+      "category": {"fr": "Python", "eng": "Python"},
+      "question": {
+        "fr": "Combien vaut l'expression logique not(1 or 0) and (1 or 0) ?",
+        "eng": "What is the value of the logical expression not(1 or 0) and (1 or 0)?"
       },
-      {
-        "question": "Combien vaut la variable i à la fin de ce programme ?\ni=16\nwhile i>=3:\n    print(i)\n    i=i-1",
-        "options": ["16", "8", "12", "2"],
-        "answer": "2"
+      "options": {"fr": ["0", "1"], "eng": ["0", "1"]},
+      "answer": {"fr": "0", "eng": "0"}
+    },
+    {
+      "category": {"fr": "Python", "eng": "Python"},
+      "question": {
+        "fr": "Combien vaut la variable i à la fin de ce programme ?\ni=16\nwhile i>=3:\n    print(i)\n    i=i-1",
+        "eng": "What is the value of the variable i at the end of this program?\ni=16\nwhile i>=3:\n    print(i)\n    i=i-1"
       },
-      {
-        "question": "Si a=9, b=1 et c=20 alors la condition logique not(c<a) and b>=a est :",
-        "options": ["vraie", "fausse"],
-        "answer": "fausse"
+      "options": {"fr": ["16", "8", "12", "2"], "eng": ["16", "8", "12", "2"]},
+      "answer": {"fr": "2", "eng": "2"}
+    },
+    {
+      "category": {"fr": "Python", "eng": "Python"},
+      "question": {
+        "fr": "Si a=9, b=1 et c=20 alors la condition logique not(c<a) and b>=a est :",
+        "eng": "If a=9, b=1, and c=20, then the logical condition not(c<a) and b>=a is:"
       },
-      {
-        "question": "Combien vaut la variable booléenne b à la fin de ce programme ?\ne1={7}\ne2={8, 7}\nb=e1<e2",
-        "options": ["True", "False"],
-        "answer": "True"
+      "options": {"fr": ["vraie", "fausse"], "eng": ["true", "false"]},
+      "answer": {"fr": "fausse", "eng": "false"}
+    },
+    {
+      "category": {"fr": "Python", "eng": "Python"},
+      "question": {
+        "fr": "Combien vaut la variable booléenne b à la fin de ce programme ?\ne1={7}\ne2={8, 7}\nb=e1<e2",
+        "eng": "What is the value of the boolean variable b at the end of this program?\ne1={7}\ne2={8, 7}\nb=e1<e2"
       },
-      {
-        "question": "Combien vaut la liste b à la fin de ce programme ?\na=['R', 'O']\nb=[]\nfor c in a:\n    b.append(chr(ord(c)+1))",
-        "options": ["['s', 'f']", "['h', 'k']", "['r', 'o']", "['R', 'm']", "['S', 'P']"],
-        "answer": "['S', 'P']"
+      "options": {"fr": ["True", "False"], "eng": ["True", "False"]},
+      "answer": {"fr": "Vrai", "eng": "True"}
+    },
+    {
+      "category": {"fr": "Python", "eng": "Python"},
+      "question": {
+        "fr": "Combien vaut la liste b à la fin de ce programme ?\na=['R', 'O']\nb=[]\nfor c in a:\n    b.append(chr(ord(c)+1))",
+        "eng": "What is the value of the list b at the end of this program?\na=['R', 'O']\nb=[]\nfor c in a:\n    b.append(chr(ord(c)+1))"
       },
-      {
-        "question": "Combien vaudra la variable b à la fin de ce programme ?\na=2\nb=6\nc=7\nd=2\nfor i in [8, 44, 47, 16, 40, 52, 21, 79]:\n    a=b\n    b=c\n    c=d\n    d=i",
-        "options": ["6", "79", "52", "7"],
-        "answer": "52"
+      "options": {
+        "fr": ["['s', 'f']", "['h', 'k']", "['r', 'o']", "['R', 'm']", "['S', 'P']"],
+        "eng": ["['s', 'f']", "['h', 'k']", "['r', 'o']", "['R', 'm']", "['S', 'P']"]
       },
-      {
-        "question": "Combien vaut la variable c à la fin de ce programme ?\na=tuple([51, 17, 53, 85, 25, 26])\nb=tuple([96, 19, 73, 42])\nc=a==b",
-        "options": ["False", "True"],
-        "answer": "False"
-      }
-    ]
-  }
+      "answer": {"fr": "['S', 'P']", "eng": "['S', 'P']"}
+    },
+    {
+      "category": {"fr": "Python", "eng": "Python"},
+      "question": {
+        "fr": "Combien vaudra la variable b à la fin de ce programme ?\na=2\nb=6\nc=7\nd=2\nfor i in [8, 44, 47, 16, 40, 52, 21, 79]:\n    a=b\n    b=c\n    c=d\n    d=i",
+        "eng": "What will be the value of the variable b at the end of this program?\na=2\nb=6\nc=7\nd=2\nfor i in [8, 44, 47, 16, 40, 52, 21, 79]:\n    a=b\n    b=c\n    c=d\n    d=i"
+      },
+      "options": {"fr": ["6", "79", "52", "7"], "eng": ["6", "79", "52", "7"]},
+      "answer": {"fr": "52", "eng": "52"}
+    },
+    {
+      "category": {"fr": "Python", "eng": "Python"},
+      "question": {
+        "fr": "Combien vaut la variable c à la fin de ce programme ?\na=tuple([51, 17, 53, 85, 25, 26])\nb=tuple([96, 19, 73, 42])\nc=a==b",
+        "eng": "What is the value of the variable c at the end of this program?\na=tuple([51, 17, 53, 85, 25, 26])\nb=tuple([96, 19, 73, 42])\nc=a==b"
+      },
+      "options": {"fr": ["False", "True"], "eng": ["False", "True"]},
+      "answer": {"fr": "Faux", "eng": "False"}
+    }
+  ]
+}
