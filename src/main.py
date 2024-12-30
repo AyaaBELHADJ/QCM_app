@@ -1,45 +1,99 @@
-## test 
-
-
-
 import ascii_magic
 from rich.console import Console
 from rich.panel import Panel
 from rich.text import Text
-
+import questionary
 import ascii_magic
-print(dir(ascii_magic))
+import json
+from colorama import Fore, Style, init
+import question_manager
+from question_manager import QuestionManager
+
+#import data
 
 # Initialize the console
 console = Console()
 
 # Convert an image to ASCII art
-ascii_art = ascii_magic.from_image(" data/brand.png")
-
-# Display the ASCII art
-console.print(Panel(ascii_art, title="Welcome!", subtitle="ASCII Art", expand=False))
-
+#ascii_art = ascii_magic.from_image("/workspaces/QCM_app/trying/p17s2tfgc31jte13d51pea1l2oblr3.png")
 # Add some styled text
-console.print(Text("Dynamic Image-Based Console", style="bold green"))
-console.print(Panel("This is your custom console interface!", style="cyan"))
+#console.print(Text("Dynamic Image-Based Console", style="bold green"))
+#console.print(Panel("This is your custom console interface!", style="cyan"))
 
-# Add some dynamic interactivity (example)
-console.print("[bold magenta]Choose an option:[/bold magenta]")
-options = [
-    "[1] View Details",
-    "[2] Edit Settings",
-    "[3] Exit"
+# Language Selection
+
+choice = questionary.select(
+    "Choisissez votre langue / Choose your language : ",
+    choices=["fr","eng"]
+).ask()
+
+language = choice
+
+with open("/workspaces/QCM_app/src/translations.json", "r", encoding="utf-8") as file:
+    translations = json.load(file)
+
+# Access a translation
+def get_translation(key, language="eng"):
+    return translations.get(key, {}).get(language, "")
+
+
+python_file = "/workspaces/QCM_app/src/python.json"
+#qm = QuestionManager(translations, language)
+question_manager=QuestionManager(python_file,language)
+console.print(get_translation("welcome",language))
+Nom_utilisateur=input(get_translation("enter_username",language))
+
+# here check if new utilisateur or old
+
+options_new = [
+    get_translation("View_Details",language),
+    get_translation("Edit_Settings",language),
+    get_translation("Start_QCM",language),
+    get_translation("Exit",language)
 ]
-for option in options:
-    console.print(option)
+options_old = [
+    get_translation("View_history",language),
+    get_translation("View_Details",language),
+    get_translation("Edit_Settings",language),
+    get_translation("Start_QCM",language),
+    get_translation("Exit",language)
+]
 
-# Handle user input
-choice = input("\nEnter your choice: ")
-if choice == "1":
-    console.print("[green]You chose to view details![/green]")
-elif choice == "2":
-    console.print("[yellow]Settings opened![/yellow]")
-elif choice == "3":
+#if new choices=options_new else choices=options_old
+choices=options_new #change it later
+
+choice = questionary.select(
+    get_translation("option_prompt",language),
+    choices
+).ask()
+
+if choice == get_translation("View_history",language):
+    console.print(f"[green]📜 {Nom_utilisateur}'s History[/green]")
+    #console.print history
+elif choice == get_translation("View_Details",language):
+    with open('/workspaces/QCM_app/trying/quiz_details.txt', 'r', encoding='utf-8') as file:
+        quiz_details = file.read()
+    # Print the content
+    console.print(quiz_details)
+elif choice == get_translation("Edit_Settings",language):
+    console.print("[red]You chose to view details![/red]")
+elif choice == get_translation("Start_QCM",language):
+    # Start Quiz Logic
+    category = question_manager.choose_category()  # User selects a category
+    questions = question_manager.get_questions_by_category(category)
+
+    correct_answers = 0
+    for question in questions:
+        question_text = question_manager.get_question_text(question)
+        options = question_manager.get_options_text(question)
+
+        # Display question and options
+        answer = questionary.select(
+            f"{question_text}",
+            choices=options
+        ).ask()
+    console.print("[red]Settings opened!![/red]")
+elif choice == get_translation("Exit",language):
     console.print("[red]Goodbye![/red]")
 else:
     console.print("[bold red]Invalid option![/bold red]")
@@ -52,11 +106,8 @@ with alive_bar(100) as bar:
     for i in range(100):
         time.sleep(0.03)
         bar()
-#
 
 
-
-import questionary
 
 choice = questionary.select(
     "Choose an option:",
@@ -64,6 +115,7 @@ choice = questionary.select(
 ).ask()
 
 print(f"You chose: {choice}")
+
 
 import time
 
@@ -83,5 +135,3 @@ import pyfiglet
 
 ascii_art = pyfiglet.figlet_format("Welcome!")
 print(ascii_art)
-
-

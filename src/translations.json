@@ -1,0 +1,51 @@
+{
+    "welcome": {
+        "fr": "Bienvenue au QCM Informatique !",
+        "eng": "Welcome to the Informatics Quiz!"
+    },
+    "enter_username": {
+        "fr": "Entrez votre nom d'utilisateur : ",
+        "eng": "Enter your username: "
+    },
+    "View_history": {
+        "fr": "Voir l'historique",
+        "eng": "View history"
+    },
+    "Edit_Settings": {
+        "fr": "Modifier les paramètres",
+        "eng": "Edit Settings"
+    },
+    "Start_QCM": {
+        "fr": "Commencer le QCM",
+        "eng": "Start QCM"
+    },
+    "View_Details": {
+        "fr": "Voir les détails",
+        "eng": "View Details"
+    },
+    "Exit": {
+        "fr": "Quitter",
+        "eng": "Exit"
+    },
+    "option_prompt": {
+        "fr": "Choisissez une option: ",
+        "eng": "Choose an option: "
+    },
+    "question_prompt": {
+        "fr": "Question",
+        "eng": "Question"
+    },
+    "your_answer": {
+        "fr": "Votre réponse : ",
+        "eng": "Your answer: "
+    },
+    "final_score": {
+        "fr": "Votre score final : ",
+        "eng": "Your final score: "
+    },
+    "export_results": {
+        "fr": "Voulez-vous exporter les résultats ? (o/n) ",
+        "eng": "Do you want to export the results? (y/n): "
+    }
+}
+

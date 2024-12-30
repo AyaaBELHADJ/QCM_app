@@ -6,9 +6,9 @@ import questionary
 import ascii_magic
 import json
 from colorama import Fore, Style, init
-import src 
-from src import question_manager
-
+import src
+#from src import question_manager
+#import data
 
 # Initialize the console
 console = Console()
@@ -73,7 +73,20 @@ elif choice == get_translation("View_Details",language):
 elif choice == get_translation("Edit_Settings",language):
     console.print("[red]You chose to view details![/red]")
 elif choice == get_translation("Start_QCM",language):
-    
+    # Start Quiz Logic
+    category = question_manager.choose_category()  # User selects a category
+    questions = question_manager.get_questions_by_category(category)
+
+    correct_answers = 0
+    for question in questions:
+        question_text = question_manager.get_question_text(question)
+        options = question_manager.get_options_text(question)
+
+        # Display question and options
+        answer = questionary.select(
+            f"{question_text}",
+            choices=options
+        ).ask()
     console.print("[red]Settings opened!![/red]")
 elif choice == get_translation("Exit",language):
     console.print("[red]Goodbye![/red]")
