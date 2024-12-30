@@ -6,6 +6,8 @@ import questionary
 import ascii_magic
 import json
 from colorama import Fore, Style, init
+import src 
+from src import question_manager
 
 
 # Initialize the console
@@ -68,11 +70,12 @@ elif choice == get_translation("View_Details",language):
         quiz_details = file.read()
     # Print the content
     console.print(quiz_details)
-elif choice == "Edit Settings":
+elif choice == get_translation("Edit_Settings",language):
     console.print("[red]You chose to view details![/red]")
-elif choice == "Start QCM":
+elif choice == get_translation("Start_QCM",language):
+    
     console.print("[red]Settings opened!![/red]")
-elif choice == "Exit":
+elif choice == get_translation("Exit",language):
     console.print("[red]Goodbye![/red]")
 else:
     console.print("[bold red]Invalid option![/bold red]")
