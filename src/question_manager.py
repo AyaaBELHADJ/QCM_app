@@ -12,6 +12,7 @@ class QuestionManager:
         self.language = language
         self.question_file = question_file
         self.questions = []
+        self.score = 0  # Initialisation du score à 0
         self.load_questions()
 
     def load_questions(self):
@@ -48,7 +49,7 @@ class QuestionManager:
 
     def check_answer(self, question, user_answer):
         """
-        Check if the user's answer is correct.
+        Check if the user's answer is correct and provide feedback.
         Args:
         - question (dict): The question dictionary.
         - user_answer (str): The user's answer.
@@ -56,8 +57,25 @@ class QuestionManager:
         - bool: True if the answer is correct, False otherwise.
         """
         correct_answer = question['answer'][self.language]
-        return user_answer.strip().lower() == correct_answer.strip().lower()
-
+        feedback_messages={
+            "eng": {
+            "correct": "Correct! Well done.",
+            "incorrect": f"Incorrect. The correct answer was: {correct_answer}."
+        },
+        "fr": {
+            "correct": "Correct! Bien joué.",
+            "incorrect": f"Incorrect. La bonne réponse était : {correct_answer}."
+        }
+        }
+        messages=feedback_messages.get(self.language, feedback_messages["eng"])
+        if user_answer.strip().lower() == correct_answer.strip().lower():
+            self.score += 1  # Si la réponse est correcte, augmenter le score
+            feedback = "Correct! Well done."
+            return True, messages["correct"]
+        else:
+           
+            return False, messages["incorrect"]
+       
     def get_question_text(self, question):
         """
         Retrieve the question text in the current language.
@@ -77,3 +95,32 @@ class QuestionManager:
         - list: The list of options in the current language.
         """
         return question['options'][self.language]
+    def display_score(self):
+    
+    # Messages de feedback dans différentes langues
+     feedback_messages = {
+        "eng": {
+            "excellent": "Excellent! You got all the answers right.",
+            "good_job": "Good job! You did well.",
+            "keep_practicing": "Keep practicing! You'll improve next time."
+        },
+        "fr": {
+            "excellent": "Excellent! Vous avez toutes les réponses correctes.",
+            "good_job": "Bon travail! Vous avez bien réussi.",
+            "keep_practicing": "Continuez à pratiquer! Vous vous améliorerez la prochaine fois."
+        }
+    }
+    
+    # Sélectionner le bon message selon la langue
+     messages = feedback_messages.get(self.language, feedback_messages["eng"])
+    
+    # Affichage du score
+     print(f"Your final score is: {self.score}/{len(self.questions)}")
+    
+    # Affichage du feedback basé sur le score
+     if self.score == len(self.questions):
+        print(messages["excellent"])
+     elif self.score > len(self.questions) / 2:
+        print(messages["good_job"])
+     else:
+           print(messages["keep_practicing"])
