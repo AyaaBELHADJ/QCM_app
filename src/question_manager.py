@@ -2,7 +2,7 @@
 import json
 
 class QuestionManager:
-    def __init__(self, question_file, language="eng"):
+    def __init__(self, question_file, language="eng",is_simple_scoring=True):
         """
         Initialize the QuestionManager with the file containing questions.
         Args:
@@ -12,7 +12,8 @@ class QuestionManager:
         self.language = language
         self.question_file = question_file
         self.questions = []
-        self.score = 0  # Initialisation du score à 0
+        self.score = 0 
+        self.is_simple_scoring = is_simple_scoring 
         self.load_questions()
 
     def load_questions(self):
@@ -55,6 +56,7 @@ class QuestionManager:
         - user_answer (str): The user's answer.
         Returns:
         - bool: True if the answer is correct, False otherwise.
+        - str : Feedback message
         """
         correct_answer = question['answer'][self.language]
         feedback_messages={
@@ -70,12 +72,12 @@ class QuestionManager:
         messages=feedback_messages.get(self.language, feedback_messages["eng"])
         if user_answer.strip().lower() == correct_answer.strip().lower():
             self.score += 1  # Si la réponse est correcte, augmenter le score
-            feedback = "Correct! Well done."
+           
             return True, messages["correct"]
         else:
-           
+            if not self.is_simple_scoring:
+                self.score -= 1  # Subtract 1 for incorrect answers in penalty mode
             return False, messages["incorrect"]
-       
     def get_question_text(self, question):
         """
         Retrieve the question text in the current language.
