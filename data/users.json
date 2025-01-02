@@ -3,19 +3,48 @@
         "history": [
             {
                 "score": 8,
-                "date": "2024-12-20 10:00:00"
+                "date": "2024-12-20 10:00:00",
+                "category": "reseaux"
             },
             {
                 "score": 6,
-                "date": "2024-12-21 14:00:00"
+                "date": "2024-12-21 14:00:00",
+                "category": "python"
             },
             {
                 "score": 9,
-                "date": "2024-12-25 00:22:13"
+                "date": "2024-12-25 00:22:13",
+                "category": "reseaux"
             },
             {
                 "score": 15,
-                "date": "2024-12-26 23:04:59"
+                "date": "2024-12-26 23:04:59",
+                "category": "python"
+            },
+            {
+                "score": 3,
+                "date": "2025-01-02 08:32:39",
+                "category": "reseaux"
+            },
+            {
+                "score": 5,
+                "date": "2025-01-02 08:35:29",
+                "category": "python"
+            },
+            {
+                "score": 2,
+                "date": "2025-01-02 08:57:34",
+                "category": "reseaux"
+            },
+            {
+                "score": 2,
+                "date": "2025-01-02 23:22:31",
+                "category": "reseau"
+            },
+            {
+                "score": 1,
+                "date": "2025-01-02 23:23:10",
+                "category": "python"
             }
         ]
     },
@@ -23,15 +52,18 @@
         "history": [
             {
                 "score": 9,
-                "date": "2024-12-20 10:00:00"
+                "date": "2024-12-20 10:00:00",
+                "category": "reseaux"
             },
             {
                 "score": 7,
-                "date": "2024-12-21 14:00:00"
+                "date": "2024-12-21 14:00:00",
+                "category": "python"
             },
             {
                 "score": 8,
-                "date": "2024-12-22 14:00:00"
+                "date": "2024-12-22 14:00:00",
+                "category": "reseaux"
             }
         ]
     },
@@ -39,11 +71,13 @@
         "history": [
             {
                 "score": 10,
-                "date": "2024-12-20 10:00:00"
+                "date": "2024-12-20 10:00:00",
+                "category": "python"
             },
             {
                 "score": 9,
-                "date": "2024-12-21 14:00:00"
+                "date": "2024-12-21 14:00:00",
+                "category": "reseaux"
             }
         ]
     },
@@ -51,11 +85,13 @@
         "history": [
             {
                 "score": 10,
-                "date": "2024-12-20 10:00:00"
+                "date": "2024-12-20 10:00:00",
+                "category": "reseaux"
             },
             {
                 "score": 9,
-                "date": "2024-12-21 14:00:00"
+                "date": "2024-12-21 14:00:00",
+                "category": "python"
             }
         ]
     },
@@ -69,11 +105,21 @@
         "history": [
             {
                 "score": 7,
-                "date": "2025-01-02 01:20:07"
+                "date": "2025-01-02 01:20:07",
+                "category": "reseaux"
             }
         ]
     },
     "Khadija": {
         "history": []
+    },
+    "Tina": {
+        "history": [
+            {
+                "score": 2,
+                "date": "2025-01-02 08:39:18",
+                "category": "python"
+            }
+        ]
     }
 }
