@@ -16,6 +16,12 @@ manager = UserManager()
 
 print("Welcome to the Quadquarks MCQ!  ")
 username = input("Enter your username: ")
+
+
+if manager.user_exists(username):
+    print(f"User '{username}' already exists.")
+else:
+    print(f"User '{username}' does not exist. Creating new user...")
 user = manager.get_or_create_user(username)
 
 # Step 2: Display user history

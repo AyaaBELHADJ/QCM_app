@@ -61,5 +61,19 @@
     },
     "Maroua": {
         "history": []
+    },
+    "safa": {
+        "history": []
+    },
+    "hinde": {
+        "history": [
+            {
+                "score": 7,
+                "date": "2025-01-02 01:20:07"
+            }
+        ]
+    },
+    "Khadija": {
+        "history": []
     }
 }

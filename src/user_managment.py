@@ -12,6 +12,7 @@ class UserManager:
         self.users = self._load_users()
 
 
+
     def _load_users(self):
         """
         Load user data from a JSON file or initialize an empty dictionary if the file doesn't exist.
@@ -28,32 +29,42 @@ class UserManager:
         with open(self.data_file, "w") as file:
             json.dump(self.users, file, indent=4)
 
+    def user_exists(self, username):
+            """
+            Check if a user already exists.
+            Args:
+                username (str): The username to check.
+            Returns:
+                int: 1 if the user exists, 0 otherwise.
+            """
+            return 1 if username in self.users else 0
+
     def get_or_create_user(self, username):
-        """
-        Retrieve a user by username or create a new entry if the user doesn't exist.
-        Args:
-            username (str): The username to search for.
-        Returns:
-            dict: The user data.
-        """
-        if username not in self.users:
-            self.users[username] = {"history": []}
-            self._save_users()
-        return self.users[username]
+            """
+            Retrieve a user by username or create a new entry if the user doesn't exist.
+            Args:
+                username (str): The username to search for.
+            Returns:
+                dict: The user data.
+            """
+            if username not in self.users:
+                self.users[username] = {"history": []}
+                self._save_users()
+            return self.users[username]
 
     def display_history(self, user):
-        """
-        Display the user's history of test results.
-        Args:
-            user (dict): The user data.
-        """
-        history = user.get("history", [])
-        if not history:
-            print("No history available.")
-        else:
-            print("Test History:")
-            for i, record in enumerate(history, 1):
-                print(f"{i}. Score: {record['score']}, Date: {record['date']}")
+            """
+            Display the user's history of test results.
+            Args:
+                user (dict): The user data.
+            """
+            history = user.get("history", [])
+            if not history:
+                print("No history available.")
+            else:
+                print("Test History:")
+                for i, record in enumerate(history, 1):
+                    print(f"{i}. Score: {record['score']}, Date: {record['date']}")
 
     def save_result(self, user, score):
         """
