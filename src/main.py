@@ -1,3 +1,6 @@
+# installations required :
+#pip install ascii-magic rich questionary colorama pyfiglet alive-progress
+
 import ascii_magic
 from rich.console import Console
 from rich.panel import Panel
@@ -9,7 +12,6 @@ from colorama import Fore, Style, init
 import question_manager
 from question_manager import QuestionManager
 
-#import data
 
 # Initialize the console
 console = Console()
@@ -20,6 +22,8 @@ console = Console()
 #console.print(Text("Dynamic Image-Based Console", style="bold green"))
 #console.print(Panel("This is your custom console interface!", style="cyan"))
 
+
+
 # Language Selection
 
 choice = questionary.select(
@@ -29,18 +33,23 @@ choice = questionary.select(
 
 language = choice
 
+# Access a translation
+
 with open("/workspaces/QCM_app/src/translations.json", "r", encoding="utf-8") as file:
     translations = json.load(file)
 
-# Access a translation
 def get_translation(key, language="eng"):
     return translations.get(key, {}).get(language, "")
 
+#inisialize question manager
 
 python_file = "/workspaces/QCM_app/src/python.json"
-#qm = QuestionManager(translations, language)
 question_manager=QuestionManager(python_file,language)
+
+#*************  Starting the program  ******************#
+
 console.print(get_translation("welcome",language))
+
 Nom_utilisateur=input(get_translation("enter_username",language))
 
 # here check if new utilisateur or old
@@ -67,16 +76,23 @@ choice = questionary.select(
     choices
 ).ask()
 
+
 if choice == get_translation("View_history",language):
     console.print(f"[green]📜 {Nom_utilisateur}'s History[/green]")
     #console.print history
+
+
 elif choice == get_translation("View_Details",language):
     with open('/workspaces/QCM_app/trying/quiz_details.txt', 'r', encoding='utf-8') as file:
         quiz_details = file.read()
     # Print the content
     console.print(quiz_details)
+
+
 elif choice == get_translation("Edit_Settings",language):
     console.print("[red]You chose to view details![/red]")
+
+
 elif choice == get_translation("Start_QCM",language):
     # Start Quiz Logic
     category = question_manager.choose_category()  # User selects a category
@@ -92,9 +108,17 @@ elif choice == get_translation("Start_QCM",language):
             f"{question_text}",
             choices=options
         ).ask()
+        check= question_manager.check_answer(question,answer)
+        if check == True:
+            console.print("right inswer")
+        else:console.print("false inswer")
+
     console.print("[red]Settings opened!![/red]")
+
+
 elif choice == get_translation("Exit",language):
     console.print("[red]Goodbye![/red]")
+
 else:
     console.print("[bold red]Invalid option![/bold red]")
 

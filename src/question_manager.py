@@ -48,6 +48,7 @@ class QuestionManager:
         choice = int(input(f"Enter the number of the category ({', '.join(categories)}): ")) - 1
         return list(categories)[choice]
 
+
     def check_answer(self, question, user_answer):
         """
         Check if the user's answer is correct and provide feedback.
