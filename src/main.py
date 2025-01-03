@@ -11,8 +11,8 @@ import json
 from colorama import Fore, Style, init
 import question_manager
 from question_manager import QuestionManager
-
-
+from timer import Timer
+import threading
 # Initialize the console
 console = Console()
 
@@ -70,57 +70,70 @@ options_old = [
 
 #if new choices=options_new else choices=options_old
 choices=options_new #change it later
-
-choice = questionary.select(
+choice=None
+while choice!= get_translation("Exit",language):
+    choice = questionary.select(
     get_translation("option_prompt",language),
     choices
-).ask()
+    ).ask()
 
 
-if choice == get_translation("View_history",language):
-    console.print(f"[green]📜 {Nom_utilisateur}'s History[/green]")
-    #console.print history
+    if choice == get_translation("View_history",language):
+        console.print(f"[green]📜 {Nom_utilisateur}'s History[/green]")
+        #console.print history
 
 
-elif choice == get_translation("View_Details",language):
-    with open('/workspaces/QCM_app/trying/quiz_details.txt', 'r', encoding='utf-8') as file:
-        quiz_details = file.read()
-    # Print the content
-    console.print(quiz_details)
+    elif choice == get_translation("View_Details",language):
+        with open('/workspaces/QCM_app/trying/quiz_details.txt', 'r', encoding='utf-8') as file:
+            quiz_details = file.read()
+        # Print the content
+        console.print(quiz_details)
 
 
-elif choice == get_translation("Edit_Settings",language):
-    console.print("[red]You chose to view details![/red]")
-
-
-elif choice == get_translation("Start_QCM",language):
-    # Start Quiz Logic
-    category = question_manager.choose_category()  # User selects a category
-    questions = question_manager.get_questions_by_category(category)
-
-    correct_answers = 0
-    for question in questions:
-        question_text = question_manager.get_question_text(question)
-        options = question_manager.get_options_text(question)
-
-        # Display question and options
-        answer = questionary.select(
-            f"{question_text}",
-            choices=options
+    elif choice == get_translation("Edit_Settings",language):
+        console.print("[red]You chose to Edit_Settings![/red]")
+        penalty_scoring = questionary.select(
+            "Do you want to enable penalty scoring?",
+            choices=["Enabled", "Disabled"],
         ).ask()
-        check= question_manager.check_answer(question,answer)
-        if check == True:
-            console.print("right inswer")
-        else:console.print("false inswer")
 
-    console.print("[red]Settings opened!![/red]")
+    elif choice == get_translation("Start_QCM",language):
+        # Start Quiz Logic
+        category = question_manager.choose_category()  # User selects a category
+        questions = question_manager.get_questions_by_category(category)
+
+        #question_manager.score = 0
+        #correct_answers = 0
+
+        timer=Timer(10)
+        timer_thread = threading.Thread(target=timer.start)
+        timer_thread.daemon = True  # Make sure the thread stops when the main program ends
+        timer_thread.start()
+        for question in questions:
+            
+            if not timer.time_limit:
+                break
+            question_text = question_manager.get_question_text(question)
+            options = question_manager.get_options_text(question)
+
+            # Display question and options
+            answer = questionary.select(
+                f"{question_text}",
+                choices=options
+            ).ask()
+            feedback = question_manager.check_answer(question, answer)
+            console.print(feedback)
+
+        console.print("Votre score is")
+        console.print(question_manager.score)
+        console.print("[red]Settings opened!![/red]")
 
 
-elif choice == get_translation("Exit",language):
-    console.print("[red]Goodbye![/red]")
+    elif choice == get_translation("Exit",language):
+        console.print("[red]Goodbye![/red]")
 
-else:
-    console.print("[bold red]Invalid option![/bold red]")
+    else:
+        console.print("[bold red]Invalid option![/bold red]")
 
 
 from alive_progress import alive_bar

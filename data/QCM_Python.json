@@ -63,7 +63,7 @@
         "fr": "Combien vaut la variable c à la fin de ce programme ?\na=tuple([51, 17, 53, 85, 25, 26])\nb=tuple([96, 19, 73, 42])\nc=a==b",
         "eng": "What is the value of the variable c at the end of this program?\na=tuple([51, 17, 53, 85, 25, 26])\nb=tuple([96, 19, 73, 42])\nc=a==b"
       },
-      "options": {"fr": ["False", "True"], "eng": ["False", "True"]},
+      "options": {"fr": ["Faux", "Vraie"], "eng": ["False", "True"]},
       "answer": {"fr": "Faux", "eng": "False"}
     }
   ]
