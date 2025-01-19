@@ -49,6 +49,28 @@
       "answer": {"fr": "['S', 'P']", "eng": "['S', 'P']"}
     },
     {
+      "category": {"fr": "Réseaux", "eng": "Networks"},
+      "question": {
+        "fr": "Identifiez la forme complète de HTTP ?",
+        "eng": "Identify the full form of HTTP?"
+      },
+      "options": {
+        "fr": [
+          "HyperText Transfer Protocol",
+          "HyperText Transfer Package",
+          "Hyper Transfer Text Package",
+          "Hyper Transfer Text Pool"
+        ],
+        "eng": [
+          "HyperText Transfer Protocol",
+          "HyperText Transfer Package",
+          "Hyper Transfer Text Package",
+          "Hyper Transfer Text Pool"
+        ]
+     },
+     "answer": {"fr": "HyperText Transfer Protocol", "eng": "HyperText Transfer Protocol"}
+    },
+    {
       "category": {"fr": "Python", "eng": "Python"},
       "question": {
         "fr": "Combien vaudra la variable b à la fin de ce programme ?\na=2\nb=6\nc=7\nd=2\nfor i in [8, 44, 47, 16, 40, 52, 21, 79]:\n    a=b\n    b=c\n    c=d\n    d=i",

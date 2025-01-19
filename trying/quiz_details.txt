@@ -1,7 +1,7 @@
 Quiz Details:
 📚 Topics Covered: Python Basics, Data Structures, Algorithms.
-🔢 Number of Questions: 10.
+🔢 Number of Questions: As vast as the cosmos, exploring beyond your imagination.
 ⏳ Time Limit: 15 minutes (optional, if enabled).
-✅ Scoring: Each correct answer gives 1 point. No negative marking.
+✅ Scoring: Scoring: Each correct answer gives 1 point. If negative scoring is enabled, each incorrect answer deducts 1 points.
 💡 Feedback: After each question, you'll receive immediate feedback on whether your answer was correct or not.
 📝 Records: Your scores and quiz history will be saved and can be viewed later.
