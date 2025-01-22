@@ -45,6 +45,21 @@
                 "score": 1,
                 "date": "2025-01-02 23:23:10",
                 "category": "python"
+            },
+            {
+                "score": 1,
+                "date": "2025-01-22 20:08:32",
+                "category": "R\u00e9seaux"
+            },
+            {
+                "score": 2,
+                "date": "2025-01-22 20:09:10",
+                "category": "R\u00e9seaux"
+            },
+            {
+                "score": -3,
+                "date": "2025-01-22 20:09:31",
+                "category": "Python"
             }
         ]
     },
@@ -130,5 +145,8 @@
                 "category": "Python"
             }
         ]
+    },
+    "python -u \"c:\\Users\\HP\\OneDrive\\Desktop\\QCM_app\\src\\main.py\"": {
+        "history": []
     }
 }

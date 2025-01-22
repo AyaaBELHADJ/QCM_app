@@ -19,6 +19,10 @@ console = Console()
 
 penalty_scoring="Disabled"
 
+import pyfiglet
+
+
+
 # Language Selection
 
 choice = questionary.select(
@@ -47,6 +51,7 @@ question_manager=QuestionManager(python_file,language)
 user_manager=UserManager(user_file,question_manager)
 
 #*************  Starting the program  ******************#
+
 
 console.print(get_translation("welcome",language))
 
@@ -88,7 +93,10 @@ while choice!= get_translation("Exit",language):
 
 
     if choice == get_translation("View_history",language):
-        console.print(f"[green]📜 {Nom_utilisateur}'s History[/green]")
+        if language== 'eng':
+            console.print(f"[green]📜 {Nom_utilisateur}'s History[/green]")
+        else:
+            console.print(f"[green]📜 Historique de {Nom_utilisateur}[/green]")
         user_manager.display_history(user_data)
 
 

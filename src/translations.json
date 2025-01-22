@@ -1,7 +1,7 @@
 {
     "welcome": {
-        "fr": "Bienvenue au QCM Informatique !",
-        "eng": "Welcome to the Informatics Quiz!"
+        "fr": "Bienvenue au Quadquarks!",
+        "eng": "Welcome to Quadquarks!"
     },
     "enter_username": {
         "fr": "Entrez votre nom d'utilisateur : ",
