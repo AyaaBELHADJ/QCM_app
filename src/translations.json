@@ -64,6 +64,10 @@
             "feedback": "Feedback: After each question, you'll receive immediate feedback on whether your answer was correct or not.",
             "records": "Records: Your scores and quiz history will be saved and can be viewed later."
           }
+    },
+    "penalty_mode": {
+        "fr": "Voulez-vous activer le système de pénalité ?",
+        "eng": "Do you want to enable penalty scoring?"
     }
 }
 

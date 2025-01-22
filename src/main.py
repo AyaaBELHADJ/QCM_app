@@ -18,6 +18,7 @@ from user_managment import UserManager
 console = Console()
 
 penalty_scoring="Disabled"
+timer_duration=10
 
 import pyfiglet
 
@@ -114,10 +115,45 @@ while choice!= get_translation("Exit",language):
     elif choice == get_translation("Edit_Settings",language):
         console.print("[red]You chose to Edit_Settings![/red]")
         penalty_scoring = questionary.select(
-            "Do you want to enable penalty scoring?",
+           get_translation("penalty_mode",language),
             choices=["Enabled", "Disabled"],
         ).ask()
+        timer_duration_prompt = (
+        "Enter the timer duration in seconds (e.g., 10, 30, 60):"
+        if language == "eng"
+        else "Entrez la durée du chronomètre en secondes (par exemple : 10, 30, 60) :"
+        )
 
+        timer_duration = questionary.text(timer_duration_prompt).ask()
+
+        # Validate input
+        try:
+            timer_duration = int(timer_duration)
+            if timer_duration <= 0:
+                console.print(
+                    "[red]Invalid duration! Using default value of 10 seconds.[/red]"
+                    if language == "eng"
+                    else "[red]Durée invalide ! Valeur par défaut de 10 secondes utilisée.[/red]"
+                )
+                timer_duration = 10  # Default value
+        except ValueError:
+            console.print(
+                "[red]Invalid input! Using default value of 10 seconds.[/red]"
+                if language == "eng"
+                else "[red]Entrée invalide ! Valeur par défaut de 10 secondes utilisée.[/red]"
+            )
+            timer_duration = 10  # Default value
+
+        # Confirmation message
+            console.print(
+            f"[green]Timer set to {timer_duration} seconds.[/green]"
+            if language == "eng"
+            else f"[green]Chronomètre réglé sur {timer_duration} secondes.[/green]"
+        )
+
+
+
+       
     elif choice == get_translation("Start_QCM",language):
         # Start Quiz Logic
         category = question_manager.choose_category()  # User selects a category
@@ -125,13 +161,16 @@ while choice!= get_translation("Exit",language):
         if penalty_scoring=="Enabled":
             question_manager.is_simple_scoring =False
 
+        user_answers = []
+        correct_answers = [q['answer'][question_manager.language] for q in questions]
         #question_manager.score = 0
         #correct_answers = 0
 
-        timer=Timer(10)
+        timer=Timer(timer_duration)
         timer_thread = threading.Thread(target=timer.start)
         timer_thread.daemon = True  # Make sure the thread stops when the main program ends
         timer_thread.start()
+
         for question in questions:
             
             if not timer.time_limit:
@@ -140,16 +179,47 @@ while choice!= get_translation("Exit",language):
             options = question_manager.get_options_text(question)
 
             # Display question and options
-            answer = questionary.select(
-                f"{question_text}",
-                choices=options
-            ).ask()
-            feedback = question_manager.check_answer(question, answer)
-            console.print(feedback)
+            try:
+                # Allow user to answer the question only if the timer is running
+                answer = questionary.select(
+                    f"{question_text}",
+                    choices=options
+                ).ask()
+
+                user_answers.append(answer)
+
+                # Check if the timer has ended after answering
+                if not timer.timer_running:
+                    console.print("\n[red]Time's up! The quiz is over.[/red]")
+                    break
+
+                # Check answer and provide feedback
+                feedback = question_manager.check_answer(question, answer)
+                console.print(feedback)
+            except Exception as e:
+                # Handle any interruptions or unexpected input gracefully
+                console.print(f"[red]An error occurred: {e}[/red]")
+                break
 
         console.print("Votre score is")
         console.print(question_manager.score)
         console.print("[red]Settings opened!![/red]")
+
+         # Export results to a file
+
+        try:
+            filename = "quiz_results.txt"  # or "quiz_results.csv"
+            from export import export_results
+            export_results(
+                category,  # Quiz category
+                [question_manager.get_question_text(q) for q in questions],  # List of question texts
+                user_answers,  # User's answers
+                [q['answer'][question_manager.language] for q in questions],  # Correct answers
+                question_manager.score,  # Final score
+                len(questions)  # Total number of questions
+            )
+        except Exception as e:
+            console.print(f"[red]Error exporting results: {e}[/red]")
 
         user_manager.save_result(user_data, question_manager.score, category)
 

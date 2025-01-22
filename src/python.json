@@ -48,28 +48,7 @@
       },
       "answer": {"fr": "['S', 'P']", "eng": "['S', 'P']"}
     },
-    {
-      "category": {"fr": "Réseaux", "eng": "Networks"},
-      "question": {
-        "fr": "Identifiez la forme complète de HTTP ?",
-        "eng": "Identify the full form of HTTP?"
-      },
-      "options": {
-        "fr": [
-          "HyperText Transfer Protocol",
-          "HyperText Transfer Package",
-          "Hyper Transfer Text Package",
-          "Hyper Transfer Text Pool"
-        ],
-        "eng": [
-          "HyperText Transfer Protocol",
-          "HyperText Transfer Package",
-          "Hyper Transfer Text Package",
-          "Hyper Transfer Text Pool"
-        ]
-     },
-     "answer": {"fr": "HyperText Transfer Protocol", "eng": "HyperText Transfer Protocol"}
-    },
+    
     {
       "category": {"fr": "Python", "eng": "Python"},
       "question": {
@@ -87,6 +66,395 @@
       },
       "options": {"fr": ["Faux", "Vraie"], "eng": ["False", "True"]},
       "answer": {"fr": "Faux", "eng": "False"}
+    },
+    {
+      "category": { "fr": "Réseaux", "eng": "Networks" },
+      "question": {
+        "fr": "Identifiez la forme complète de HTTP ?",
+        "eng": "Identify the full form of HTTP?"
+      },
+      "options": {
+        "fr": [
+          "HyperText Transfer Protocol",
+          "HyperText Transfer Package",
+          "Hyper Transfer Text Package",
+          "Hyper Transfer Text Pool"
+        ],
+        "eng": [
+          "HyperText Transfer Protocol",
+          "HyperText Transfer Package",
+          "Hyper Transfer Text Package",
+          "Hyper Transfer Text Pool"
+        ]
+      },
+      "answer": { "fr": "HyperText Transfer Protocol", "eng": "HyperText Transfer Protocol" }
+    },
+    {
+      "category": { "fr": "Réseaux", "eng": "Networks" },
+      "question": {
+        "fr": "Que signifie DNS en entier ?",
+        "eng": "What is the full form of DNS?"
+      },
+      "options": {
+        "fr": [
+          "Domain Name System",
+          "Domain Network Server",
+          "Data Name Server",
+          "Dynamic Network System"
+        ],
+        "eng": [
+          "Domain Name System",
+          "Domain Network Server",
+          "Data Name Server",
+          "Dynamic Network System"
+        ]
+      },
+      "answer": { "fr": "Domain Name System", "eng": "Domain Name System" }
+    },
+    {
+      "category": { "fr": "Réseaux", "eng": "Networks" },
+      "question": {
+        "fr": "Identifiez la forme complète de IP ?",
+        "eng": "Identify the full form of IP?"
+      },
+      "options": {
+        "fr": [
+          "Internet Protocol",
+          "Internet Package",
+          "Internal Process",
+          "Information Protocol"
+        ],
+        "eng": [
+          "Internet Protocol",
+          "Internet Package",
+          "Internal Process",
+          "Information Protocol"
+        ]
+      },
+      "answer": { "fr": "Internet Protocol", "eng": "Internet Protocol" }
+    },
+    {
+      "category": { "fr": "Réseaux", "eng": "Networks" },
+      "question": {
+        "fr": "Que signifie HTTPS ?",
+        "eng": "What is the full form of HTTPS?"
+      },
+      "options": {
+        "fr": [
+          "HyperText Transfer Protocol Secure",
+          "HyperText Transfer Package Secure",
+          "Hyper Transfer Text Secure",
+          "Hyper Transfer Text Protocol Secure"
+        ],
+        "eng": [
+          "HyperText Transfer Protocol Secure",
+          "HyperText Transfer Package Secure",
+          "Hyper Transfer Text Secure",
+          "Hyper Transfer Text Protocol Secure"
+        ]
+      },
+      "answer": { "fr": "HyperText Transfer Protocol Secure", "eng": "HyperText Transfer Protocol Secure" }
+    },
+    {
+      "category": { "fr": "Réseaux", "eng": "Networks" },
+      "question": {
+        "fr": "Que signifie FTP en entier ?",
+        "eng": "What is the full form of FTP?"
+      },
+      "options": {
+        "fr": [
+          "File Transfer Protocol",
+          "File Text Protocol",
+          "File Transfer Package",
+          "File Transmission Protocol"
+        ],
+        "eng": [
+          "File Transfer Protocol",
+          "File Text Protocol",
+          "File Transfer Package",
+          "File Transmission Protocol"
+        ]
+      },
+      "answer": { "fr": "File Transfer Protocol", "eng": "File Transfer Protocol" }
+    },
+    {
+      "category": { "fr": "Réseaux", "eng": "Networks" },
+      "question": {
+        "fr": "Que signifie VPN ?",
+        "eng": "What is the full form of VPN?"
+      },
+      "options": {
+        "fr": [
+          "Virtual Private Network",
+          "Virtual Personal Network",
+          "Verified Private Network",
+          "Virtual Protocol Network"
+        ],
+        "eng": [
+          "Virtual Private Network",
+          "Virtual Personal Network",
+          "Verified Private Network",
+          "Virtual Protocol Network"
+        ]
+      },
+      "answer": { "fr": "Virtual Private Network", "eng": "Virtual Private Network" }
+    },
+    {
+      "category": { "fr": "Réseaux", "eng": "Networks" },
+      "question": {
+        "fr": "Que signifie MAC en réseau ?",
+        "eng": "What is the full form of MAC in networking?"
+      },
+      "options": {
+        "fr": [
+          "Media Access Control",
+          "Media Access Center",
+          "Main Access Control",
+          "Multiple Access Center"
+        ],
+        "eng": [
+          "Media Access Control",
+          "Media Access Center",
+          "Main Access Control",
+          "Multiple Access Center"
+        ]
+      },
+      "answer": { "fr": "Media Access Control", "eng": "Media Access Control" }
+    },
+    {
+      "category": { "fr": "Réseaux", "eng": "Networks" },
+      "question": {
+        "fr": "Que signifie LAN en entier ?",
+        "eng": "What is the full form of LAN?"
+      },
+      "options": {
+        "fr": [
+          "Local Area Network",
+          "Large Area Network",
+          "Local Access Network",
+          "Limited Area Network"
+        ],
+        "eng": [
+          "Local Area Network",
+          "Large Area Network",
+          "Local Access Network",
+          "Limited Area Network"
+        ]
+      },
+      "answer": { "fr": "Local Area Network", "eng": "Local Area Network" }
+    },
+    {
+      "category": { "fr": "Réseaux", "eng": "Networks" },
+      "question": {
+        "fr": "Que signifie URL ?",
+        "eng": "What is the full form of URL?"
+      },
+      "options": {
+        "fr": [
+          "Uniform Resource Locator",
+          "Universal Resource Locator",
+          "Uniform Resource Link",
+          "Universal Routing Link"
+        ],
+        "eng": [
+          "Uniform Resource Locator",
+          "Universal Resource Locator",
+          "Uniform Resource Link",
+          "Universal Routing Link"
+        ]
+      },
+      "answer": { "fr": "Uniform Resource Locator", "eng": "Uniform Resource Locator" }
+    }, 
+    {
+      "category": { "fr": "Systèmes d'exploitation", "eng": "Operating Systems" },
+      "question": {
+        "fr": "Quel est le rôle principal d'un système d'exploitation ?",
+        "eng": "What is the primary role of an operating system?"
+      },
+      "options": {
+        "fr": [
+          "Gérer les ressources matérielles et logicielles",
+          "Compiler les programmes",
+          "Protéger contre les virus",
+          "Fournir un accès à Internet"
+        ],
+        "eng": [
+          "Manage hardware and software resources",
+          "Compile programs",
+          "Protect against viruses",
+          "Provide Internet access"
+        ]
+      },
+      "answer": { "fr": "Gérer les ressources matérielles et logicielles", "eng": "Manage hardware and software resources" }
+    },
+    {
+      "category": { "fr": "Systèmes d'exploitation", "eng": "Operating Systems" },
+      "question": {
+        "fr": "Quel système d'exploitation est basé sur un noyau Linux ?",
+        "eng": "Which operating system is based on the Linux kernel?"
+      },
+      "options": {
+        "fr": ["Windows", "macOS", "Android", "DOS"],
+        "eng": ["Windows", "macOS", "Android", "DOS"]
+      },
+      "answer": { "fr": "Android", "eng": "Android" }
+    },
+    {
+      "category": { "fr": "Systèmes d'exploitation", "eng": "Operating Systems" },
+      "question": {
+        "fr": "Quel est le rôle du gestionnaire de processus dans un système d'exploitation ?",
+        "eng": "What is the role of the process manager in an operating system?"
+      },
+      "options": {
+        "fr": [
+          "Gérer les fichiers",
+          "Planifier et exécuter les processus",
+          "Gérer la mémoire virtuelle",
+          "Fournir des interfaces utilisateur"
+        ],
+        "eng": [
+          "Manage files",
+          "Schedule and execute processes",
+          "Manage virtual memory",
+          "Provide user interfaces"
+        ]
+      },
+      "answer": { "fr": "Planifier et exécuter les processus", "eng": "Schedule and execute processes" }
+    },
+    {
+      "category": { "fr": "Systèmes d'exploitation", "eng": "Operating Systems" },
+      "question": {
+        "fr": "Que signifie le terme 'multitâche' dans un système d'exploitation ?",
+        "eng": "What does the term 'multitasking' mean in an operating system?"
+      },
+      "options": {
+        "fr": [
+          "Exécuter plusieurs processus simultanément",
+          "Exécuter un seul processus à la fois",
+          "Partager des fichiers entre utilisateurs",
+          "Accéder à plusieurs périphériques"
+        ],
+        "eng": [
+          "Executing multiple processes simultaneously",
+          "Executing a single process at a time",
+          "Sharing files between users",
+          "Accessing multiple devices"
+        ]
+      },
+      "answer": { "fr": "Exécuter plusieurs processus simultanément", "eng": "Executing multiple processes simultaneously" }
+    },
+    {
+      "category": { "fr": "Systèmes d'exploitation", "eng": "Operating Systems" },
+      "question": {
+        "fr": "Quelle structure est utilisée par le système d'exploitation pour gérer la mémoire ?",
+        "eng": "What structure is used by the operating system to manage memory?"
+      },
+      "options": {
+        "fr": ["Table des pages", "Arbre binaire", "Pile", "Graphique"],
+        "eng": ["Page table", "Binary tree", "Stack", "Graph"]
+      },
+      "answer": { "fr": "Table des pages", "eng": "Page table" }
+    },
+    {
+      "category": { "fr": "Systèmes d'exploitation", "eng": "Operating Systems" },
+      "question": {
+        "fr": "Qu'est-ce qu'un 'système de fichiers' ?",
+        "eng": "What is a 'file system'?"
+      },
+      "options": {
+        "fr": [
+          "Un logiciel pour compresser les fichiers",
+          "Une structure pour organiser et stocker les fichiers",
+          "Un programme pour exécuter des fichiers",
+          "Un mécanisme de protection des données"
+        ],
+        "eng": [
+          "Software for compressing files",
+          "A structure for organizing and storing files",
+          "A program to execute files",
+          "A data protection mechanism"
+        ]
+      },
+      "answer": { "fr": "Une structure pour organiser et stocker les fichiers", "eng": "A structure for organizing and storing files" }
+    },
+    {
+      "category": { "fr": "Systèmes d'exploitation", "eng": "Operating Systems" },
+      "question": {
+        "fr": "Que signifie 'interruption' dans un système d'exploitation ?",
+        "eng": "What does 'interrupt' mean in an operating system?"
+      },
+      "options": {
+        "fr": [
+          "Un arrêt du système",
+          "Un signal pour capturer l'attention du processeur",
+          "Une requête d'entrée/sortie",
+          "Un processus en cours d'exécution"
+        ],
+        "eng": [
+          "A system halt",
+          "A signal to capture the CPU's attention",
+          "An input/output request",
+          "A running process"
+        ]
+      },
+      "answer": { "fr": "Un signal pour capturer l'attention du processeur", "eng": "A signal to capture the CPU's attention" }
+    },
+    {
+      "category": { "fr": "Systèmes d'exploitation", "eng": "Operating Systems" },
+      "question": {
+        "fr": "Quel est l'objectif principal de la mémoire virtuelle ?",
+        "eng": "What is the primary goal of virtual memory?"
+      },
+      "options": {
+        "fr": [
+          "Augmenter l'espace de stockage",
+          "Simuler une mémoire plus grande",
+          "Protéger les données contre les virus",
+          "Permettre l'accès simultané à la mémoire"
+        ],
+        "eng": [
+          "Increase storage space",
+          "Simulate a larger memory",
+          "Protect data from viruses",
+          "Allow simultaneous memory access"
+        ]
+      },
+      "answer": { "fr": "Simuler une mémoire plus grande", "eng": "Simulate a larger memory" }
+    },
+    {
+      "category": { "fr": "Systèmes d'exploitation", "eng": "Operating Systems" },
+      "question": {
+        "fr": "Quel algorithme est couramment utilisé pour la gestion des processus ?",
+        "eng": "Which algorithm is commonly used for process management?"
+      },
+      "options": {
+        "fr": ["FIFO", "LIFO", "Round Robin", "Quicksort"],
+        "eng": ["FIFO", "LIFO", "Round Robin", "Quicksort"]
+      },
+      "answer": { "fr": "Round Robin", "eng": "Round Robin" }
+    },
+    {
+      "category": { "fr": "Systèmes d'exploitation", "eng": "Operating Systems" },
+      "question": {
+        "fr": "Quel est le rôle d'un noyau dans un système d'exploitation ?",
+        "eng": "What is the role of a kernel in an operating system?"
+      },
+      "options": {
+        "fr": [
+          "Gérer la communication entre matériel et logiciel",
+          "Créer des applications",
+          "Protéger contre les malwares",
+          "Fournir des services réseau"
+        ],
+        "eng": [
+          "Manage communication between hardware and software",
+          "Create applications",
+          "Protect against malware",
+          "Provide network services"
+        ]
+      },
+      "answer": { "fr": "Gérer la communication entre matériel et logiciel", "eng": "Manage communication between hardware and software" }
     }
+    
   ]
 }
