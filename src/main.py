@@ -13,8 +13,10 @@ import question_manager
 from question_manager import QuestionManager
 from timer import Timer
 import threading
+from user_managment import UserManager
 # Initialize the console
 console = Console()
+
 
 # Convert an image to ASCII art
 #ascii_art = ascii_magic.from_image("/workspaces/QCM_app/trying/p17s2tfgc31jte13d51pea1l2oblr3.png")
@@ -35,16 +37,21 @@ language = choice
 
 # Access a translation
 
-with open("/workspaces/QCM_app/src/translations.json", "r", encoding="utf-8") as file:
+with open(r"C:\Users\HP\OneDrive\Desktop\QCM_app\src\translations.json", "r", encoding="utf-8") as file:
+
     translations = json.load(file)
 
 def get_translation(key, language="eng"):
     return translations.get(key, {}).get(language, "")
 
-#inisialize question manager
+#inisialize question manager and user managment
 
-python_file = "/workspaces/QCM_app/src/python.json"
+python_file = "./src/python.json"
+user_file="./src/users.json"
+
 question_manager=QuestionManager(python_file,language)
+
+user_manager=UserManager(user_file,question_manager)
 
 #*************  Starting the program  ******************#
 
@@ -52,7 +59,8 @@ console.print(get_translation("welcome",language))
 
 Nom_utilisateur=input(get_translation("enter_username",language))
 
-# here check if new utilisateur or old
+
+
 
 options_new = [
     get_translation("View_Details",language),
@@ -68,23 +76,31 @@ options_old = [
     get_translation("Exit",language)
 ]
 
-#if new choices=options_new else choices=options_old
-choices=options_new #change it later
+if(user_manager.user_exists(Nom_utilisateur)):
+    choices=options_old
+else:
+    choices=options_new
+    
+
+user_data = user_manager.get_or_create_user(Nom_utilisateur)
+
+
 choice=None
 while choice!= get_translation("Exit",language):
     choice = questionary.select(
     get_translation("option_prompt",language),
+
     choices
     ).ask()
 
 
     if choice == get_translation("View_history",language):
         console.print(f"[green]📜 {Nom_utilisateur}'s History[/green]")
-        #console.print history
+        user_manager.display_history(user_data)
 
 
     elif choice == get_translation("View_Details",language):
-        with open('/workspaces/QCM_app/trying/quiz_details.txt', 'r', encoding='utf-8') as file:
+        with open(r"C:\Users\HP\OneDrive\Desktop\QCM_app\trying\quiz_details.txt", 'r', encoding='utf-8') as file:
             quiz_details = file.read()
         # Print the content
         console.print(quiz_details)
@@ -127,6 +143,8 @@ while choice!= get_translation("Exit",language):
         console.print("Votre score is")
         console.print(question_manager.score)
         console.print("[red]Settings opened!![/red]")
+
+        user_manager.save_result(user_data, question_manager.score, category)
 
 
     elif choice == get_translation("Exit",language):
