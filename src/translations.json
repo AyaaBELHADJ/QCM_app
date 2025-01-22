@@ -46,6 +46,24 @@
     "export_results": {
         "fr": "Voulez-vous exporter les résultats ? (o/n) ",
         "eng": "Do you want to export the results? (y/n): "
+    },
+    "quiz_details":{
+        "fr": {
+            "topics_covered": "Sujets Couverts: Bases de Python, Structures de données, Algorithmes.",
+            "number_of_questions": "Nombre de Questions: Aussi vaste que le cosmos, allant au-delà de votre imagination.",
+            "time_limit": "Limite de Temps: 15 minutes (optionnelle, si activée).",
+            "scoring": "Notation: Chaque réponse correcte rapporte 1 point. Si le système de pénalité est activé, chaque réponse incorrecte retire 1 point.",
+            "feedback": "Retour: Après chaque question, vous recevrez un retour immédiat pour savoir si votre réponse est correcte ou non.",
+            "records": "Historique: Vos scores et l’historique de vos quiz seront sauvegardés et consultables ultérieurement."
+          },
+        "eng": {
+            "topics_covered": "Topics Covered: Python Basics, Data Structures, Algorithms.",
+            "number_of_questions": "Number of Questions: As vast as the cosmos, exploring beyond your imagination.",
+            "time_limit": "Time Limit: 15 minutes (optional, if enabled).",
+            "scoring": "Scoring: Each correct answer gives 1 point. If negative scoring is enabled, each incorrect answer deducts 1 point.",
+            "feedback": "Feedback: After each question, you'll receive immediate feedback on whether your answer was correct or not.",
+            "records": "Records: Your scores and quiz history will be saved and can be viewed later."
+          }
     }
 }
 

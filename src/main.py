@@ -17,14 +17,7 @@ from user_managment import UserManager
 # Initialize the console
 console = Console()
 
-
-# Convert an image to ASCII art
-#ascii_art = ascii_magic.from_image("/workspaces/QCM_app/trying/p17s2tfgc31jte13d51pea1l2oblr3.png")
-# Add some styled text
-#console.print(Text("Dynamic Image-Based Console", style="bold green"))
-#console.print(Panel("This is your custom console interface!", style="cyan"))
-
-
+penalty_scoring="Disabled"
 
 # Language Selection
 
@@ -100,10 +93,14 @@ while choice!= get_translation("Exit",language):
 
 
     elif choice == get_translation("View_Details",language):
-        with open(r"C:\Users\HP\OneDrive\Desktop\QCM_app\trying\quiz_details.txt", 'r', encoding='utf-8') as file:
-            quiz_details = file.read()
-        # Print the content
-        console.print(quiz_details)
+        details = get_translation("quiz_details",language)
+        print("Quiz Details:")
+        print(f"📚  {details['topics_covered']}")
+        print(f"🔢  {details['number_of_questions']}")
+        print(f"⏳  {details['time_limit']}")
+        print(f"✅  {details['scoring']}")
+        print(f"💡  {details['feedback']}")
+        print(f"📝  {details['records']}")
 
 
     elif choice == get_translation("Edit_Settings",language):
@@ -117,6 +114,8 @@ while choice!= get_translation("Exit",language):
         # Start Quiz Logic
         category = question_manager.choose_category()  # User selects a category
         questions = question_manager.get_questions_by_category(category)
+        if penalty_scoring=="Enabled":
+            question_manager.is_simple_scoring =False
 
         #question_manager.score = 0
         #correct_answers = 0
@@ -164,15 +163,7 @@ with alive_bar(100) as bar:
 
 
 
-choice = questionary.select(
-    "Choose an option:",
-    choices=["Option 1", "Option 2", "Exit"]
-).ask()
 
-print(f"You chose: {choice}")
-
-
-import time
 
 message = "Loading your beautiful console..."
 for char in message:
@@ -186,7 +177,3 @@ init(autoreset=True)
 print(Fore.CYAN + "Welcome to your beautiful Python console!")
 print(Style.BRIGHT + Back.YELLOW + "This is highlighted text!")
 
-import pyfiglet
-
-ascii_art = pyfiglet.figlet_format("Welcome!")
-print(ascii_art)
